@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:mysql://hadoop:3306/chat_analysis?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  
+  # Spring级别的文件上传大小限制
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500MB  # 单个文件最大大小
+      max-request-size: 500MB  # 整个请求最大大小
+      file-size-threshold: 2KB  # 文件大小阈值，超过此值将写入磁盘
+
+server:
+  port: 8080
+  # Tomcat级别的文件上传大小限制（与Spring配置保持一致）
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+# HDFS配置
+hdfs:
+  uri: hdfs://hadoop:9000
+  user: root  # HDFS操作用户，可根据实际情况修改
+
+# Hive配置
+hive:
+  jdbc:
+    url: jdbc:hive2://hadoop:10000/ods
+    user: root  # Hive连接用户，可根据实际情况修改
+    password: ""  # Hive密码，如果设置了密码请填写

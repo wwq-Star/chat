@@ -1,0 +1,29 @@
+{
+  "name": "chat-analysis-frontend",
+  "version": "1.0.0",
+  "description": "聊天记录分析系统前端",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.4",
+    "axios": "^1.4.0",
+    "element-ui": "^2.15.13",
+    "echarts": "^5.4.3"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "@vue/cli-plugin-router": "^5.0.8",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
+
